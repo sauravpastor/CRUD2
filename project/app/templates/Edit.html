@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if data1 %}
+    <form action="{% url 'Update' pk=data1.id %}" method="post">
+        {% csrf_token %}      
+        <input type="text" name="empnm" placeholder="EmployeeName" value="{{data1.EmployeeName}}" >  <br> <br>
+        <input type="number" name="empsl" placeholder="EmplayeeSalary" value="{{data1.EmployeeSalary}}"> <br> <br>
+        <input type="text" name="emprol" placeholder="EmplayeeRole" value="{{data1.EmployeeRole}}"> <br> <br>
+        <input type="number" name="empphne" placeholder="EmployeePhone" value="{{data1.EmployeePhone}}"> <br> <br>
+        <input type="submit" value="update">
+    </form>
+    {% endif %}
+</body>
+</html>
